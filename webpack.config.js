@@ -18,27 +18,14 @@ module.exports = {
         path: __dirname + "/assets",
         filename: "bundle.js"
     },
-    // module: {
-    //     rules: [
-    //       {
-    //         test: /\.css$/,
-    //         loader: 'style-loader!css-loader'
-    //       }
-    //     ]
-    // },
-
-    // module: {
-    //     rules: [{
-    //         test: /\.css$/,
-    //         use: [{ loader: 'style-loader' },{ loader: 'css-loader' }],
-    //     }]
-    // },
     module: {
-        rules: [{
+        rules: [
+          {
             test: /\.css$/,
-            use: 'css-loader'
-        }]
-    }
+            loader: 'style-loader!css-loader'
+          }
+        ]
+    },
     plugins: [
         new HtmlWebpackPlugin({
             template: __dirname + "/src/enter.html"
