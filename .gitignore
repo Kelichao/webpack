@@ -1,2 +1,4 @@
-/webpack-demo1/node_modules
-/node_modules
+node_modules/
+/index.html
+/kit.min.js
+/assets/index.html
