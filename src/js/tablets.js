@@ -8,8 +8,8 @@
  * @https://github.com/Kelichao/kit.js
  */
 
-y = require("../css/main.css");
-// console.log(y)
-var x = require("./content.js")
+// var y = require("../css/main.css");
+require("../css/style.less");
+var x = require("./content.js");
 document.write(x + "大家好");
 // 防止undefined被改写

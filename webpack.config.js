@@ -23,12 +23,20 @@ module.exports = {
           {
             test: /\.css$/,
             loader: "style-loader!css-loader"
+          },
+          {
+            test: /\.less$/,
+            use: [
+              'style-loader',
+              { loader: 'css-loader', options: { importLoaders: 1 } },
+              'less-loader'
+            ]
           }
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: __dirname + "/src/app.html"
+            template: __dirname + "/src/views/enter/app.html"
         }),
         new webpack.optimize.UglifyJsPlugin({
             compress: {

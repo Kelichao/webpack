@@ -2,7 +2,6 @@
 "bitwise": false , //禁用位运算符 
 "curly": true, //表达式都需要大括号{} 
 "freeze": true,	//禁止复写原生对象(如Array, Date)的原型 
-"quotmark": "double",	//引号状态 
 "newcap": true, //构造函数名首字母必须大写 
 "undef":true,//禁止使用不在全局变量列表中的未定义的变量 
 "unused": true, //禁止使用未通过var声明的变量 
