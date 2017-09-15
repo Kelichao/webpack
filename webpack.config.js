@@ -13,7 +13,7 @@ if (TARGET === "product") {
 
 module.exports = {
     devtool: devtool,// 配置生成Source Maps，选择合适的选项
-    entry: { bbb: "./src/js/kit.js" },
+    entry: { bbb: "./src/js/tablets.js" },
     output: {
         path: __dirname + "/assets",
         filename: "bundle.js"
@@ -22,13 +22,13 @@ module.exports = {
         rules: [
           {
             test: /\.css$/,
-            loader: 'style-loader!css-loader'
+            loader: "style-loader!css-loader"
           }
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: __dirname + "/src/enter.html"
+            template: __dirname + "/src/app.html"
         }),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
