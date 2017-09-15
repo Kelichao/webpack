@@ -2,7 +2,7 @@ var webpack = require("webpack");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 var WebpackDevServer = require("webpack-dev-server");
 var OpenBrowserPlugin = require('open-browser-webpack-plugin');//帮助打开浏览器
-var ExtractTextPlugin =require("extract-text-webpack-plugin");
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var TARGET = process.env.npm_lifecycle_event;// 命令名称
 var port = process.env.npm_package_config_port;
 var devtool = "eval-source-map";
@@ -22,22 +22,26 @@ module.exports = {
     },
     module: {
         rules: [
-          {
-            test: /\.css$/,
-            loader: "style-loader!css-loader"
-          },
-          {
-            test: /\.less$/,
-            use: [
-              'style-loader',
-              { loader: 'css-loader', options: { importLoaders: 1 } },
-              { loader: 'less-loader', options: {sourceMap: true} }
-            ]
-          },
-    　　　　{
-    　　　　　　test: /\.(png|jpg|gif)$/,
-    　　　　　　loader: 'url-loader?limit=50000'
-    　　　　}
+            {
+                test: /\.css$/,
+                loader: "style-loader!css-loader"
+            },
+            {
+                test: /\.less$/,
+                use: [
+                    'style-loader',
+                    { loader: 'css-loader', options: { importLoaders: 1 } },
+                    { loader: 'less-loader', options: { sourceMap: true } }
+                ]
+            },
+            {
+                test: /\.(png|jpg|gif|eot|woff|svg|ttf)$/,
+                loader: 'url-loader?limit=50000'
+            },
+            // {
+            //     test: /\.(ttf)/,
+            //     loader: "file-loader"
+            // },
         ]
     },
     plugins: [
